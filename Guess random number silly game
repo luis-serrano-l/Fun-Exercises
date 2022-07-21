@@ -1,0 +1,21 @@
+import random
+
+til= int(input('Guess until number: '))
+def guess(til):
+    my_guess=0
+    goal=random.randint(1,til)
+    while my_guess!=goal:
+        my_guess=int(input(f'Number between 1 and {til}: '))
+        if my_guess<goal:
+            if (goal-my_guess)>(til/3): #This is what I consider to be a simple way to define much higher
+                print('Nope, much higher')
+            else:
+                print ('A bit higher')
+        elif my_guess>goal:
+            if (my_guess-goal)>(til/3):
+                print('Loweeeeer')
+            else:
+                print ('A bit lower')
+            
+    print(f'Your are correct! The number is {my_guess} :)')
+guess(til)
